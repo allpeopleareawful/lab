@@ -123,7 +123,7 @@ int main() {
                "\n 6 - clear tree"
                "\n 7 - levels"
                "\n 8 - main action"
-               "\n ==>");
+               "\n =>");
         scanf("%d", &k);
         if (!k) break;
         if (k == 1) {

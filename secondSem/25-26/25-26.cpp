@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "queueDynamic.h"
+//#include "queueDynamic.h"
+#include "queueMassive.h"
 
 queue mergeSort(queue &q) {
     if (empty(q) || (size(q) == 1)) {
@@ -28,13 +29,14 @@ int main() {
     init(q);
     int in;
     while (1) {
-        printf("Menu:\n");
-        printf("1)Random queue\n");
-        printf("2)Print queue\n");
-        printf("3)Push value\n");
-        printf("4)Pop value\n");
-        printf("5)Sort queue\n");
-        printf("0)Exit\n");
+        printf("Menu:\n"
+               "1. Generate random queue\n"
+               "2. Print queue\n"
+               "3. Push value\n"
+               "4. Pop value\n"
+               "5. Sort queue\n"
+               "0. Exit\n"
+               "=> ");
         scanf("%d", &in);
         switch (in) {
             case 0: {

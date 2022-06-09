@@ -1,6 +1,14 @@
-queueDynamic.exe: queueDynamic.o
-	g++ -c -o 25-26.o 25-26.cpp
-	g++ -o queue.exe 25-26.o
-	rm -rf *.o
+CC = g++
+CFLAGS = -c -Wall
+LDFLAGS =
+SOURCES = 25-26.cpp queueDynamic.h
+OBJECTS = $(SOURCES:.cpp=.o)
+EXECUTABLE = queue.exe
 
-queueDynamic.o: queueDynamic.h
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@

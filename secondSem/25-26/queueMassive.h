@@ -2,7 +2,7 @@
 
 #ifndef LAB_QUEUEMASSIVE_H
 #define LAB_QUEUEMASSIVE_H
-#define N 100;
+#define N 100
 typedef int typeValue;
 
 struct queue {
@@ -20,7 +20,7 @@ int empty(queue &q) {
 }
 
 void push(queue &q, typeValue v) {
-    if (q.size == N) printf("Queue is overflow!\n")
+    if (q.size == N) printf("Queue is overflow!\n");
     else {
         q.value[++q.end %= N] = v;
         q.size++;
@@ -57,7 +57,7 @@ void display(queue q) {
 queue merge(queue &q1, queue &q2) {
     queue q;
     init(q);
-    while (!(empty(q1) && empty(q2))) {
+    while (!(empty(q1) || empty(q2))) {
         if (top(q1) < top(q2)) push(q, pop(q1));
         else push(q, pop(q2));
     }

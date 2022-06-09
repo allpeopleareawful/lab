@@ -168,7 +168,8 @@ int main() {
                    "8. Lenght of list.\n"
                    "9. Print this MENU\n"
                    "10. Main Action\n"
-                   "0. Exit out program.\n");
+                   "0. Exit out program.\n"
+                   "=> ");
         }
 
         printf("\nInput number of MENU: ");

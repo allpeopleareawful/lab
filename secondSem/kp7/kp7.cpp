@@ -96,11 +96,8 @@ int main() {
     float *A, **matrix;
     int *M, cntNz, n, m;
 
-    //printf("Enter n\n");
     scanf("%d", &n);
-    //printf("Enter m\n");
     scanf("%d", &m);
-    //printf("Enter cntNz\n");
     scanf("%d", &cntNz);
 
     matrix = new float *[n];
@@ -110,7 +107,6 @@ int main() {
     M = new int[n];
     A = new float[3 * cntNz];
 
-    //printf("Enter short matrix\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &M[i]);
     }
@@ -121,10 +117,8 @@ int main() {
     printShortMatrix(M, A, n, cntNz);
     shortToFull(matrix, M, A, n, cntNz);
     printFullMatrix(matrix, n, m);
+    task(matrix, n, m);
     fullToShort(matrix, M, A, cntNz, n, m);
     printShortMatrix(M, A, n, cntNz);
-
-    task(matrix, n, m);
-
     return 0;
 }
